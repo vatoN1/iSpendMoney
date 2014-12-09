@@ -1,5 +1,5 @@
 //
-//  Expenses.h
+//  Expense.h
 //  iSpend
 //
 //  Created by academy387 bosmal on 12/8/14.
@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Expenses : NSObject
+@interface Expense : NSObject
 
 @property NSString *name;
 
-@property NSNumber *value;
+@property double value;
 
 @property NSDate *date;
+
+-(id)initWithName:(NSString*)name andValue:(double)value andDate:(NSDate*)date;
 
 @end

@@ -10,7 +10,5 @@
 
 @interface StartViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *createPlanButton;
-@property (weak, nonatomic) IBOutlet UIButton *viewPlanButton;
-@property (weak, nonatomic) IBOutlet UIButton *deletePlanButton;
+
 @end

@@ -12,8 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *planNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *planDurationTextView;
-@property (weak, nonatomic) IBOutlet UIStepper *durationCounter;
 @property (weak, nonatomic) IBOutlet UITextField *planBudgetTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *currencyPickItem;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @end

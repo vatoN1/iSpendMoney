@@ -14,7 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *dailyLabel;
 @property (weak, nonatomic) IBOutlet UITextField *expenseNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *expenseCostTextView;
-@property (weak, nonatomic) IBOutlet UIButton *addExpenseButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *changeCurrenyPickItem;
-@property (weak, nonatomic) IBOutlet UIButton *saveChangesButton;
 @end

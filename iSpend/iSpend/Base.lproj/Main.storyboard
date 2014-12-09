@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <scenes>
         <!--Start View Controller-->
@@ -18,37 +18,55 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pg-Es-48K">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="View plan">
+                                <color key="backgroundColor" red="0.17192949799999999" green="0.55567818879999997" blue="0.21632689920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="View Plan">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="119" y="206" width="163" height="30"/>
+                                    <rect key="frame" x="124" y="371" width="163" height="49"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="e7Q-Ap-mjR" kind="show" id="uKS-74-cjc"/>
+                                    <action selector="viewClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sMe-M3-YXW"/>
+                                    <segue destination="e7Q-Ap-mjR" kind="show" id="AnS-wh-VIG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-ay-sN5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Delete plan">
+                                <color key="backgroundColor" red="0.17192949799999999" green="0.55567818879999997" blue="0.21632689920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Delete Plan">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="119" y="403" width="163" height="30"/>
+                                    <rect key="frame" x="124" y="468" width="163" height="49"/>
                                 </variation>
+                                <connections>
+                                    <action selector="deleteClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RC9-ah-RQL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-Vg-tur">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Create plan">
+                                <color key="backgroundColor" red="0.17192949802344007" green="0.55567818880081177" blue="0.21632689921589754" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Create Plan">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="119" y="168" width="163" height="30"/>
+                                    <rect key="frame" x="124" y="275" width="163" height="49"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="gVF-Qc-yVG" kind="show" id="tGr-gb-Os3"/>
+                                    <action selector="createClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iva-dg-5sH"/>
+                                    <segue destination="gVF-Qc-yVG" kind="show" id="voE-Vc-3dn"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_1260025_web.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hhd-lP-Cpf">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="28" width="240" height="128"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -56,6 +74,7 @@
                                 <exclude reference="8Pg-Es-48K"/>
                                 <exclude reference="KJ5-ay-sN5"/>
                                 <exclude reference="iMe-Vg-tur"/>
+                                <exclude reference="hhd-lP-Cpf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -63,14 +82,10 @@
                                 <include reference="8Pg-Es-48K"/>
                                 <include reference="KJ5-ay-sN5"/>
                                 <include reference="iMe-Vg-tur"/>
+                                <include reference="hhd-lP-Cpf"/>
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="createPlanButton" destination="iMe-Vg-tur" id="bfP-7T-fTt"/>
-                        <outlet property="deletePlanButton" destination="KJ5-ay-sN5" id="Zzc-tS-Bdu"/>
-                        <outlet property="viewPlanButton" destination="8Pg-Es-48K" id="SdO-es-aKP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,6 +178,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-14" y="223" width="169" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="saveEditPlanClicked:" destination="e7Q-Ap-mjR" eventType="touchUpInside" id="lwJ-Jj-03e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ime T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bm-Qr-4ph">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -206,6 +224,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="167" y="361" width="109" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="addExpenseClicked:" destination="e7Q-Ap-mjR" eventType="touchUpInside" id="uo9-la-pvS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,12 +266,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="addExpenseButton" destination="MW5-Z6-HJ3" id="r7O-JH-ejA"/>
                         <outlet property="changeCurrenyPickItem" destination="yXg-Be-mVj" id="klr-J6-c0O"/>
                         <outlet property="dailyLabel" destination="uar-gg-KMA" id="dZt-Uz-fqm"/>
                         <outlet property="expenseCostTextView" destination="b9I-4N-gzm" id="9j5-am-2Qx"/>
                         <outlet property="expenseNameTextView" destination="ao0-ge-aCH" id="LhT-Cu-Ar6"/>
-                        <outlet property="saveChangesButton" destination="QSC-Ej-nBj" id="ky1-a5-jhK"/>
                         <outlet property="statusLabel" destination="IiX-kn-bpa" id="rtR-mQ-WCX"/>
                     </connections>
                 </viewController>
@@ -323,9 +342,13 @@
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MdK-Ja-KiZ">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <color key="tintColor" red="0.17192949799999999" green="0.55567818879999997" blue="0.21632689920000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="263" y="92" width="94" height="29"/>
                                 </variation>
+                                <connections>
+                                    <action selector="stepClicked:" destination="gVF-Qc-yVG" eventType="valueChanged" id="Wkz-Vf-yzO"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-LV-rxw">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -344,14 +367,16 @@
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guI-fD-Qg1">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.17192949799999999" green="0.55567818879999997" blue="0.21632689920000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="116" y="404" width="169" height="30"/>
+                                    <rect key="frame" x="119" y="451" width="163" height="49"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="e7Q-Ap-mjR" kind="show" id="C01-zh-Jcy"/>
+                                    <action selector="saveClicked:" destination="gVF-Qc-yVG" eventType="touchUpInside" id="7DZ-bS-e0E"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -387,11 +412,10 @@
                     </view>
                     <connections>
                         <outlet property="currencyPickItem" destination="XNj-Vl-esW" id="tne-cO-YMG"/>
-                        <outlet property="durationCounter" destination="MdK-Ja-KiZ" id="Spt-By-5aZ"/>
                         <outlet property="planBudgetTextView" destination="M3v-hE-53j" id="aKM-ED-pdj"/>
                         <outlet property="planDurationTextView" destination="RQe-aj-ZIz" id="UqW-vP-pwQ"/>
                         <outlet property="planNameTextView" destination="pKC-iK-9ee" id="l1J-3J-dMq"/>
-                        <outlet property="saveButton" destination="guI-fD-Qg1" id="agG-uR-70E"/>
+                        <segue destination="e7Q-Ap-mjR" kind="show" identifier="showPlanEdit" id="czn-2I-GG2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JxP-5B-TiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,7 +423,10 @@
             <point key="canvasLocation" x="666" y="359"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_1260025_web.jpg" width="200" height="170"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uKS-74-cjc"/>
+        <segue reference="czn-2I-GG2"/>
     </inferredMetricsTieBreakers>
 </document>

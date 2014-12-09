@@ -23,6 +23,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)createClick:(id)sender {
+}
+- (IBAction)viewClick:(id)sender {
+}
+- (IBAction)deleteClick:(id)sender {
+}
 
 /*
 #pragma mark - Navigation

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1001201A376045003AE93E /* logo_1260025_web.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B10011F1A376045003AE93E /* logo_1260025_web.jpg */; };
 		8B4CAA161A36108D001AD45B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CAA151A36108D001AD45B /* main.m */; };
 		8B4CAA191A36108D001AD45B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CAA181A36108D001AD45B /* AppDelegate.m */; };
 		8B4CAA1C1A36108D001AD45B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CAA1B1A36108D001AD45B /* ViewController.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B10011F1A376045003AE93E /* logo_1260025_web.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_1260025_web.jpg; sourceTree = "<group>"; };
 		8B4CAA101A36108D001AD45B /* iSpend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4CAA141A36108D001AD45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B4CAA151A36108D001AD45B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		8B4CAA131A36108D001AD45B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B10011F1A376045003AE93E /* logo_1260025_web.jpg */,
 				8B4CAA141A36108D001AD45B /* Info.plist */,
 				8B4CAA151A36108D001AD45B /* main.m */,
 			);
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1001201A376045003AE93E /* logo_1260025_web.jpg in Resources */,
 				8B4CAA1F1A36108D001AD45B /* Main.storyboard in Resources */,
 				8B4CAA241A36108D001AD45B /* LaunchScreen.xib in Resources */,
 				8B4CAA211A36108D001AD45B /* Images.xcassets in Resources */,

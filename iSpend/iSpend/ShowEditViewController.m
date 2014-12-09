@@ -23,6 +23,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)saveEditPlanClicked:(id)sender {
+}
+- (IBAction)addExpenseClicked:(id)sender {
+}
 
 /*
 #pragma mark - Navigation

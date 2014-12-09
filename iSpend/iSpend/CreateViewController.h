@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Plan.h"
+#import "ShowEditViewController.h"
 
-@interface CreateViewController : UIViewController
+@interface CreateViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *planNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *planDurationTextView;
 @property (weak, nonatomic) IBOutlet UITextField *planBudgetTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *currencyPickItem;
+
+@property Plan *plan;
+@property NSArray *currencies;
+@property NSInteger rowValue;
 @end

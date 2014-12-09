@@ -17,15 +17,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM", @"CAD", @"SGD", @"BRL", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"TRY", @"USD", @"XBT", nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)stepClicked:(id)sender {
+- (IBAction)stepClicked:(UIStepper *)sender {
+    
+    NSUInteger days = sender.value;
+    self.planDurationTextView.text = [NSString stringWithFormat:@"%02lu", (unsigned long)days];
+    
 }
+
+
+// tell the picker how many rows are available for a given component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.currencies.count;
+}
+
+// tell the picker how many components it will have
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// tell the picker the title for a given component
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *title;
+    
+    title = self.currencies[row];
+    return title;
+}
+
+- (void)pickerView: (UIPickerView *) pickerView didSelectRow: (NSInteger)row inComponent: (NSInteger) component {
+    self.rowValue = row;
+}
+
+
 - (IBAction)saveClicked:(id)sender {
+    
+    self.plan = [[Plan alloc] initWithName:self.planNameTextView.text andBudget:[self.planBudgetTextView.text integerValue]andCurrency:[self.currencies objectAtIndex:self.rowValue] andExpenses:[self.planDurationTextView.text integerValue]];
+    [self performSegueWithIdentifier:@"showPlanEdit" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqual:@"showUser"])
+    {
+        ShowEditViewController *controller = (ShowEditViewController*)[segue  destinationViewController];
+        
+        //[controller setPlan:self.plan];
+       
+    }
 }
 
 /*

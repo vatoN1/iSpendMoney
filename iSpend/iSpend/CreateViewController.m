@@ -59,7 +59,7 @@
 
 - (IBAction)saveClicked:(id)sender {
     
-    self.plan = [[Plan alloc] initWithName:self.planNameTextView.text andBudget:[self.planBudgetTextView.text integerValue]andCurrency:[self.currencies objectAtIndex:self.rowValue] andExpenses:[self.planDurationTextView.text integerValue]];
+    self.plan = [[Plan alloc] initWithName:self.planNameTextView.text andDuration:[self.planDurationTextView.text integerValue] andBudget:[self.planBudgetTextView.text integerValue]andCurrency:[self.currencies objectAtIndex:self.rowValue]];
     [self performSegueWithIdentifier:@"showPlanEdit" sender:self];
 }
 

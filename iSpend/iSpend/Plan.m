@@ -10,7 +10,7 @@
 
 @implementation Plan
 
--(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency andExpenses:(NSMutableArray*)expenses {
+-(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency {
     self = [super init];
     if (self) {
         self.name = name;

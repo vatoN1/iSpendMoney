@@ -15,7 +15,7 @@
 		8B4CAA211A36108D001AD45B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CAA201A36108D001AD45B /* Images.xcassets */; };
 		8B4CAA241A36108D001AD45B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CAA221A36108D001AD45B /* LaunchScreen.xib */; };
 		8B4CAA301A36108D001AD45B /* iSpendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CAA2F1A36108D001AD45B /* iSpendTests.m */; };
-		8B99BD5E1A362F2300FD46FB /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B99BD5B1A362F2300FD46FB /* Expenses.m */; };
+		8B99BD5E1A362F2300FD46FB /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B99BD5B1A362F2300FD46FB /* Expense.m */; };
 		8B99BD5F1A362F2300FD46FB /* Plan.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B99BD5D1A362F2300FD46FB /* Plan.m */; };
 		E965B4411A3625AD00F12166 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E965B4401A3625AD00F12166 /* StartViewController.m */; };
 		E965B4451A36264500F12166 /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E965B4441A36264500F12166 /* CreateViewController.m */; };
@@ -47,8 +47,8 @@
 		8B4CAA291A36108D001AD45B /* iSpendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSpendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4CAA2E1A36108D001AD45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B4CAA2F1A36108D001AD45B /* iSpendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSpendTests.m; sourceTree = "<group>"; };
-		8B99BD5A1A362F2300FD46FB /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
-		8B99BD5B1A362F2300FD46FB /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
+		8B99BD5A1A362F2300FD46FB /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		8B99BD5B1A362F2300FD46FB /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
 		8B99BD5C1A362F2300FD46FB /* Plan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plan.h; sourceTree = "<group>"; };
 		8B99BD5D1A362F2300FD46FB /* Plan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plan.m; sourceTree = "<group>"; };
 		E965B43F1A3625AD00F12166 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 		8B99BD601A362F2600FD46FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8B99BD5A1A362F2300FD46FB /* Expenses.h */,
-				8B99BD5B1A362F2300FD46FB /* Expenses.m */,
+				8B99BD5A1A362F2300FD46FB /* Expense.h */,
+				8B99BD5B1A362F2300FD46FB /* Expense.m */,
 				8B99BD5C1A362F2300FD46FB /* Plan.h */,
 				8B99BD5D1A362F2300FD46FB /* Plan.m */,
 			);
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4CAA1C1A36108D001AD45B /* ViewController.m in Sources */,
-				8B99BD5E1A362F2300FD46FB /* Expenses.m in Sources */,
+				8B99BD5E1A362F2300FD46FB /* Expense.m in Sources */,
 				E965B4411A3625AD00F12166 /* StartViewController.m in Sources */,
 				E965B4451A36264500F12166 /* CreateViewController.m in Sources */,
 				8B99BD5F1A362F2300FD46FB /* Plan.m in Sources */,
@@ -394,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSpend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -404,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSpend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -7,16 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Expenses.h"
+#import "Expense.h"
 
 @interface Plan : NSObject
 
 @property NSString *name;
 
-@property NSInteger *duration;
+@property int duration;
 
-@property NSNumber *budget;
+@property double budget;
 
 @property NSString *currency;
+
+@property NSMutableArray *expenses;
+
+@property double daily;
+
+@property NSDate* date;
+
+-(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency andExpenses:(NSMutableArray*)expenses;
+
+-(NSMutableArray*)addExpenses:(Expense*)expense;
 
 @end

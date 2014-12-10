@@ -65,12 +65,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqual:@"showUser"])
+    if([[segue identifier] isEqual:@"showPlanEdit"])
     {
         ShowEditViewController *controller = (ShowEditViewController*)[segue  destinationViewController];
         
-        //[controller setPlan:self.plan];
-       
+        [controller addedPlan:self.plan];
     }
 }
 

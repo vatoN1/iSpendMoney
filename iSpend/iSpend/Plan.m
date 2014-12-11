@@ -10,7 +10,7 @@
 
 @implementation Plan
 
--(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency {
+-(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency andDate:(NSDate*)date{
     self = [super init];
     if (self) {
         self.name = name;
@@ -19,7 +19,7 @@
         self.currency = currency;
         self.expenses = [[NSMutableArray alloc] init];
         self.daily = budget/duration;
-        self.date = [NSDate date];
+        self.date = date;
     }
     return self;
 }

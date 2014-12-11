@@ -25,7 +25,7 @@
 
 @property NSDate* date;
 
--(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency;
+-(id)initWithName:(NSString*)name andDuration:(int)duration andBudget:(double)budget andCurrency:(NSString*)currency andDate:(NSDate*)date;
 
 -(NSMutableArray*)addExpenses:(Expense*)expense;
 

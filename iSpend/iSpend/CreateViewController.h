@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *planDurationTextView;
 @property (weak, nonatomic) IBOutlet UITextField *planBudgetTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *currencyPickItem;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @property Plan *plan;
 @property NSArray *currencies;

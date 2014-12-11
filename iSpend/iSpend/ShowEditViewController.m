@@ -19,8 +19,17 @@
     // Do any additional setup after loading the view.
     self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM", @"CAD", @"SGD", @"BRL", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"TRY", @"USD", @"XBT", nil];
     
+    if ([[NSDate date] compare:self.plan.date] != NSOrderedAscending)
+    {
+        NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate:self.plan.date];
+        int numberOfDays = secondsBetween / 86400;
+        self.plan.duration -= numberOfDays;
+    }
+    
+    [self.changeCurrenyPickItem selectRow:[self.currencies indexOfObject:self.plan.currency] inComponent:0 animated:YES];
+    
     self.statusLabel.text = [[NSString alloc] initWithFormat:@"%@ %@", @(self.plan.budget).stringValue, self.plan.currency];
-    self.dailyLabel.text = [[NSString alloc] initWithFormat:@"%.1g %@", self.plan.daily, self.plan.currency];
+    self.dailyLabel.text = [[NSString alloc] initWithFormat:@"%.2f %@", self.plan.daily, self.plan.currency];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +60,7 @@
 }
 
 - (IBAction)saveEditPlanClicked:(id)sender {
-    NSString *webAddress = [[NSString alloc] initWithFormat:@"%@, %@, %@, %@, %@, %@", @"http://rate-exchange.appspot.com/currency?from=", self.plan.currency, @"&to=", [self.currencies objectAtIndex:self.rowValue], @"&q=", @(self.plan.budget).stringValue];
+    NSString *webAddress = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@", @"http://rate-exchange.appspot.com/currency?from=", self.plan.currency, @"&to=", [self.currencies objectAtIndex:self.rowValue], @"&q=", @(self.plan.budget).stringValue];
     
     //@"http://rate-exchange.appspot.com/currency?from=USD&to=EUR&q=100"
     
@@ -64,13 +73,20 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
      {
          NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-         NSLog(@"%@", [responseDict valueForKey:@"v"]);
+         self.plan.budget = round([[responseDict valueForKey:@"v"] doubleValue]*100.0)/100.0;
+         
+         
+         self.plan.currency = [self.currencies objectAtIndex:self.rowValue];
+         self.plan.daily = self.plan.budget/self.plan.duration;
+         
+         self.statusLabel.text = [[NSString alloc] initWithFormat:@"%.2f %@", self.plan.budget, self.plan.currency];
+         self.dailyLabel.text = [[NSString alloc] initWithFormat:@"%.2f %@", self.plan.daily, self.plan.currency];
      }];
     
-    //nastaviti implementaciju / preracunati novi daily, novi budget i self.plan.currency = novi
 }
 - (IBAction)addExpenseClicked:(id)sender {
-    
+    Expense *newExpense = [[Expense alloc] initWithName:self.expenseNameTextView.text andValue:[self.expenseCostTextView.text doubleValue] andDate:[NSDate date]];
+    [self.plan addExpenses:newExpense];
 }
 
 -(void)addedPlan:(Plan*)plan{

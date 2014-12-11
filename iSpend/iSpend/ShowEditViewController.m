@@ -37,6 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return self.currencies.count;

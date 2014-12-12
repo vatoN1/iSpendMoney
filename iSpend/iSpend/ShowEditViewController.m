@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM", @"CAD", @"SGD", @"BRL", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"TRY", @"USD", @"XBT", nil];
+    self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM",  @"BRL", @"CAD", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"SGD", @"TRY", @"USD", @"XBT", nil];
     
     if ([[NSDate date] compare:self.plan.date] != NSOrderedAscending)
     {
@@ -32,11 +32,40 @@
     self.dailyLabel.text = [[NSString alloc] initWithFormat:@"%.2f %@", self.plan.daily, self.plan.currency];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.plan.expenses count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell;
+    
+    if(indexPath.row % 2 == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"expenseItem1"];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"expenseItem2"];
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+
+    
+    Expense *e = (Expense*)[self.plan.expenses objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@  %@ %@  %@", e.name, @(e.value).stringValue, self.plan.currency, [dateFormatter stringFromDate:e.date]];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    return cell;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -86,9 +115,20 @@
     
 }
 - (IBAction)addExpenseClicked:(id)sender {
-    Expense *newExpense = [[Expense alloc] initWithName:self.expenseNameTextView.text andValue:[self.expenseCostTextView.text doubleValue] andDate:[NSDate date]];
-    [self.plan addExpenses:newExpense];
+    if (![self.expenseNameTextView.text isEqualToString:@""] && ![self.expenseCostTextView.text isEqualToString:@""] && self.plan.budget >= [self.expenseCostTextView.text doubleValue]) {
+        Expense *newExpense = [[Expense alloc] initWithName:self.expenseNameTextView.text andValue:[self.expenseCostTextView.text doubleValue] andDate:[NSDate date]];
+        [self.plan addExpenses:newExpense];
+        
+        
+        self.statusLabel.text = [[NSString alloc] initWithFormat:@"%@ %@", @(self.plan.budget).stringValue, self.plan.currency];
+        self.dailyLabel.text = [[NSString alloc] initWithFormat:@"%.2f %@", self.plan.daily, self.plan.currency];
+        
+        [self.tableView reloadData];
+    }
+    
 }
+
+
 
 -(void)addedPlan:(Plan*)plan{
     self.plan = plan;

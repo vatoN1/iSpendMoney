@@ -10,7 +10,7 @@
 #import "Plan.h"
 #import "ShowEditViewController.h"
 
-@interface CreateViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface CreateViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *planNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *planDurationTextView;

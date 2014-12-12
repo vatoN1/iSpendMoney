@@ -220,6 +220,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="175" y="319" width="181" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="e7Q-Ap-mjR" id="eL5-YO-4W0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9I-4N-gzm">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -228,32 +231,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="175" y="357" width="181" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="e7Q-Ap-mjR" id="BeF-zW-foG"/>
+                                </connections>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ezL-e1-ui6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseItem" id="Rar-7w-73i">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rar-7w-73i" id="Hfl-hn-teu">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.73905222039473684" green="0.86916035353535359" blue="0.60282175164473684" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HBr-Z9-c0n">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBr-Z9-c0n" id="Ehl-zh-Y75">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.57357627467105265" green="0.77860300164473684" blue="0.54523026315789469" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-9" y="452" width="419" height="148"/>
-                                </variation>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW5-Z6-HJ3">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.17192949799999999" green="0.55567818879999997" blue="0.21632689920000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -294,6 +275,35 @@
                                     <segue destination="vXZ-lx-hvc" kind="show" id="juo-X4-kNc"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ezL-e1-ui6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseItem1" id="Rar-7w-73i">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rar-7w-73i" id="Hfl-hn-teu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73905222039473684" green="0.86916035353535359" blue="0.60282175164473684" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseItem2" id="HBr-Z9-c0n">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBr-Z9-c0n" id="Ehl-zh-Y75">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.57357627467105265" green="0.77860300164473684" blue="0.54523026315789469" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-9" y="452" width="419" height="148"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="e7Q-Ap-mjR" id="WIA-0Q-HxC"/>
+                                    <outlet property="delegate" destination="e7Q-Ap-mjR" id="vhm-1m-PB3"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -309,9 +319,9 @@
                                 <exclude reference="T6z-on-8au"/>
                                 <exclude reference="ao0-ge-aCH"/>
                                 <exclude reference="b9I-4N-gzm"/>
-                                <exclude reference="ezL-e1-ui6"/>
                                 <exclude reference="MW5-Z6-HJ3"/>
                                 <exclude reference="NQ0-Fc-FSY"/>
+                                <exclude reference="ezL-e1-ui6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -327,9 +337,9 @@
                                 <include reference="T6z-on-8au"/>
                                 <include reference="ao0-ge-aCH"/>
                                 <include reference="b9I-4N-gzm"/>
-                                <include reference="ezL-e1-ui6"/>
                                 <include reference="MW5-Z6-HJ3"/>
                                 <include reference="NQ0-Fc-FSY"/>
+                                <include reference="ezL-e1-ui6"/>
                             </mask>
                         </variation>
                     </view>
@@ -339,6 +349,7 @@
                         <outlet property="expenseCostTextView" destination="b9I-4N-gzm" id="9j5-am-2Qx"/>
                         <outlet property="expenseNameTextView" destination="ao0-ge-aCH" id="LhT-Cu-Ar6"/>
                         <outlet property="statusLabel" destination="IiX-kn-bpa" id="rtR-mQ-WCX"/>
+                        <outlet property="tableView" destination="ezL-e1-ui6" id="rg7-oe-I1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q65-q6-F20" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,6 +404,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="119" y="34" width="237" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="gVF-Qc-yVG" id="PA8-Ar-5TF"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNb-8i-Fel">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -419,6 +433,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="119" y="323" width="238" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="gVF-Qc-yVG" id="TBT-lI-OIx"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQe-aj-ZIz">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -427,6 +444,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="119" y="262" width="139" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="gVF-Qc-yVG" id="VJK-el-oXz"/>
+                                </connections>
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MdK-Ja-KiZ">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>

@@ -28,6 +28,10 @@
     [self.expenses addObject:expense];
     self.budget = self.budget - expense.value;
     self.daily = self.budget/self.duration;
+    if (self.budget < 0) {
+        self.budget = 0;
+        self.daily = 0;
+    }
     return self.expenses;
 }
 

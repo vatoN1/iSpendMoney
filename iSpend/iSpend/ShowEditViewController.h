@@ -11,7 +11,7 @@
 #import "Plan.h"
 #import "Expense.h"
 
-@interface ShowEditViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ShowEditViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dailyLabel;
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *changeCurrenyPickItem;
 @property NSArray *currencies;
 @property NSInteger rowValue;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property Plan* plan;
 

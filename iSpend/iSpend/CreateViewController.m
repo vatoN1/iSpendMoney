@@ -17,9 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM", @"CAD", @"SGD", @"BRL", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"TRY", @"USD", @"XBT", nil];
+    self.currencies = [[NSArray alloc] initWithObjects:@"AUD", @"BAM",  @"BRL", @"CAD", @"CHF", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"HRK", @"INR", @"JPY", @"MXN", @"NOK", @"PLN", @"QAR", @"RSD", @"RUB", @"SEK", @"SGD", @"TRY", @"USD", @"XBT", nil];
     
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,8 +64,12 @@
 
 - (IBAction)saveClicked:(id)sender {
     
-    self.plan = [[Plan alloc] initWithName:self.planNameTextView.text andDuration:[self.planDurationTextView.text integerValue] andBudget:[self.planBudgetTextView.text integerValue]andCurrency:[self.currencies objectAtIndex:self.rowValue] andDate:self.datePicker.date];
-    [self performSegueWithIdentifier:@"showPlanEdit" sender:self];
+    
+    if (![self.planDurationTextView.text isEqualToString:@""] && ![self.planBudgetTextView.text isEqualToString:@""]) {
+        self.plan = [[Plan alloc] initWithName:self.planNameTextView.text andDuration:[self.planDurationTextView.text integerValue] andBudget:[self.planBudgetTextView.text integerValue]andCurrency:[self.currencies objectAtIndex:self.rowValue] andDate:self.datePicker.date];
+        
+        [self performSegueWithIdentifier:@"showPlanEdit" sender:self];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

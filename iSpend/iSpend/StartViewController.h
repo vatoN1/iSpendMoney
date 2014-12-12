@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Plan.h"
+#import "Expense.h"
 
 @interface StartViewController : UIViewController
 
+@property Plan *plan;
+@property NSString *planData;
+
+-(void)savePlan;
+-(void)getPlan;
 
 @end
